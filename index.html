@@ -13,40 +13,60 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            margin: 0;
+            background-color: #020617;
         }
-        .font-montserrat {
-            font-family: 'Montserrat', sans-serif;
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        
+        /* Skeleton/Loader inicial */
+        #initial-loader {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #020617;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
         }
-        ::-webkit-scrollbar {
-            width: 8px;
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(59, 130, 246, 0.1);
+            border-left-color: #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
         }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #3b82f6;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #2563eb;
-        }
+        @keyframes spin { to { transform: rotate(360deg); } }
     </style>
 <script type="importmap">
 {
   "imports": {
-    "@google/genai": "https://esm.sh/@google/genai@^1.39.0",
     "react": "https://esm.sh/react@19.0.0",
-    "react/": "https://esm.sh/react@19.0.0/",
     "react-dom": "https://esm.sh/react-dom@19.0.0",
-    "react-dom/": "https://esm.sh/react-dom@19.0.0/",
-    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client"
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "@google/genai": "https://esm.sh/@google/genai@1.3.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
   }
 }
 </script>
 </head>
 <body class="bg-slate-950 text-slate-100">
+    <div id="initial-loader">
+        <div class="spinner"></div>
+    </div>
+
     <div id="root"></div>
-    <!-- Punto de entrada crítico para que la aplicación cargue -->
+
+    <script type="module">
+        // Quitar el loader cuando React tome el control
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('initial-loader');
+            if (loader) setTimeout(() => loader.style.opacity = '0', 500);
+            if (loader) setTimeout(() => loader.remove(), 1000);
+        });
+    </script>
     <script type="module" src="./index.tsx"></script>
 </body>
 </html>
