@@ -1,9 +1,10 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
-
 export const getTravelAdvice = async (userPrompt: string, history: { role: 'user' | 'assistant', content: string }[]) => {
+  // Inicialización limpia según lineamientos oficiales
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  
   try {
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",

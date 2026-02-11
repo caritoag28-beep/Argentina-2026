@@ -1,15 +1,15 @@
 
 import React, { useState } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import SeasonGrid from './components/SeasonGrid';
-import DestinationSection from './components/DestinationSection';
-import SpiritOfArgentina from './components/SpiritOfArgentina';
-import ResearchInsights from './components/ResearchInsights';
-import VideoShowcase from './components/VideoShowcase';
-import AIChat from './components/AIChat';
-import Footer from './components/Footer';
-import { Season } from './types';
+import Header from './components/Header.tsx';
+import Hero from './components/Hero.tsx';
+import SeasonGrid from './components/SeasonGrid.tsx';
+import DestinationSection from './components/DestinationSection.tsx';
+import SpiritOfArgentina from './components/SpiritOfArgentina.tsx';
+import ResearchInsights from './components/ResearchInsights.tsx';
+import VideoShowcase from './components/VideoShowcase.tsx';
+import AIChat from './components/AIChat.tsx';
+import Footer from './components/Footer.tsx';
+import { Season } from './types.ts';
 
 const App: React.FC = () => {
   const [activeSeason, setActiveSeason] = useState<Season | null>(null);
@@ -21,7 +21,6 @@ const App: React.FC = () => {
       <main className="flex-grow">
         <Hero />
         
-        {/* Nueva sección visual con la imagen Argentina.png */}
         <SpiritOfArgentina />
         
         <SeasonGrid 
@@ -33,10 +32,8 @@ const App: React.FC = () => {
           activeSeason={activeSeason} 
         />
 
-        {/* Sección de Investigación basada en PDF */}
         <ResearchInsights />
 
-        {/* Call to Action Section */}
         <section id="planificar" className="py-32 bg-slate-900 overflow-hidden relative border-y border-white/5">
           <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-[120px]"></div>
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-[150px]"></div>
@@ -73,10 +70,8 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Video Showcase Section */}
         <VideoShowcase />
 
-        {/* New Map Visual Section */}
         <section className="py-32 bg-slate-950 overflow-hidden relative">
           <div className="container mx-auto px-6 text-center">
             <div className="mb-20 relative inline-block">
