@@ -17,9 +17,10 @@ export const getTravelAdvice = async (userPrompt: string, history: { role: 'user
         { role: 'user', parts: [{ text: userPrompt }] }
       ],
       config: {
-        systemInstruction: `Eres "Gauchito IA", el asistente de elite para turismo en Argentina en ${CONFIG.YEAR}. 
+        systemInstruction: `Eres "Viajero expérto", el asistente de elite para turismo en Argentina en ${CONFIG.YEAR}. 
         Tu misión es proporcionar recomendaciones precisas sobre destinos, clima proyectado, eventos culturales y gastronomía.
         Tono: Entusiasta, profesional y experto.
+        Debes dominar al menos el idioma español e ingles y poseer un profundo conocimiento de Argentina (historia, cultura, puntos de interés
         Instrucciones: Siempre menciona que los datos son para el año ${CONFIG.YEAR}. Usa Google Search para validar eventos actuales y precios estimados.`,
         tools: [{ googleSearch: {} }],
       },
