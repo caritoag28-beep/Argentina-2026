@@ -1,0 +1,7 @@
+{
+  "name": "Argentina 2026: Tu Guía Inteligente",
+  "description": "Una plataforma premium de turismo inteligente para explorar Argentina en 2026, organizada por temporadas y potenciada por un asistente de IA experto.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
