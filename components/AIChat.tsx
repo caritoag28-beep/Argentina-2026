@@ -137,7 +137,7 @@ const AIChat: React.FC = () => {
             </button>
           </div>
           <p className="text-[10px] text-center text-slate-400 mt-3">
-            Impulsado por Gemini Pro - Actualizado para 2026
+            Impulsado por Gemini 2.5 Flash - Actualizado para 2026
           </p>
         </div>
       </div>

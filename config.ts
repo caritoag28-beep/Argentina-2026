@@ -6,7 +6,7 @@
  */
 export const CONFIG = {
   GEMINI_API_KEY: "AIzaSyCCCqTzK4Fmfh9BiQBWp65xSWCSkS7a3GI",
-  MODEL_NAME: "gemini-3-flash-preview",
+  MODEL_NAME: "gemini-2.5-flash",
   APP_NAME: "Argentina 2026",
   YEAR: "2026"
 };
