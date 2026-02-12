@@ -124,7 +124,7 @@ const AIChat: React.FC = () => {
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Ej: ¿Qué hacer en Salta en Invierno?"
-              className="w-full pl-4 pr-12 py-3 bg-slate-100 border-none rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all outline-none"
+              className="w-full pl-4 pr-12 py-3 bg-slate-100 border-none rounded-xl text-sm text-slate-900 focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all outline-none"
             />
             <button 
               onClick={handleSend}
